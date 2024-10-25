@@ -1,5 +1,7 @@
 # coolest-project-2024
 
+![cave 1](images/cave1.png)
+
 ## Projekt leírása
 
 Űrhajós játék, ahol az űrlényeket egy cellába kell juttatni, és különböző pályákon kell végigmenni. Az elején van egy kipróbálós pálya, ahol megismerkedhetsz a mechanikákkal. A játék Android telefonon játszható. Különböző fegyverek közül lehet választani: katana, íj, gépfegyver. Minden fegyver úgy van tervezve, hogy amit eltalálsz, az azonnal teleportál a börtön cellába. A fegyvereket az elején a gyakorló pályán kipróbálhatod.
