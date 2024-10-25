@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnj48leyo0unf"]
+[gd_scene load_steps=6 format=3 uid="uid://dnj48leyo0unf"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_ds1sw"]
 [ext_resource type="Texture2D" uid="uid://7ysvcuvyty2h" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0000.png" id="1_uuriy"]
 [ext_resource type="Texture2D" uid="uid://dkjdjmki578yj" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0001.png" id="2_2eexg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6c20"]
-size = Vector2(20, 23)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgfig"]
+height = 23.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0r6x0"]
 animations = [{
@@ -26,35 +26,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 10.0
 }]
-
-[sub_resource type="Animation" id="Animation_nhwwp"]
-resource_name = "animation"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bus2d"]
-_data = {
-"animation": SubResource("Animation_nhwwp")
-}
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ds1sw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 18.5)
-shape = SubResource("RectangleShape2D_w6c20")
+position = Vector2(0, 18.45)
+shape = SubResource("CapsuleShape2D_rgfig")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 18)
 sprite_frames = SubResource("SpriteFrames_0r6x0")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.575672
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_bus2d")
-}

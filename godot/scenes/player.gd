@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 200.0
+const JUMP_VELOCITY = -320.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var animation = get_node("AnimationPlayer")
+@onready var animation = $AnimatedSprite2D
 
 func _physics_process(delta):
 	# Add the gravity.
