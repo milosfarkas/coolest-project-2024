@@ -93,4 +93,4 @@ Ha bármilyen javaslatod vagy ötleted van, nyiss egy hibajegyet vagy küldj be 
 - https://kenney.nl/assets/pixel-platformer-blocks
 - https://kenney.nl/assets/platformer-pack-redux
 - https://kenney.nl/assets/platformer-art-requests
-
+- https://www.youtube.com/watch?v=kPSyUEQds6M&ab_channel=MakerTech

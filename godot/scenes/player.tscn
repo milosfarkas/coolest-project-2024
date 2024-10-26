@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnj48leyo0unf"]
+[gd_scene load_steps=10 format=3 uid="uid://dnj48leyo0unf"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_ds1sw"]
 [ext_resource type="Texture2D" uid="uid://7ysvcuvyty2h" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0000.png" id="1_uuriy"]
 [ext_resource type="Texture2D" uid="uid://dkjdjmki578yj" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0001.png" id="2_2eexg"]
+[ext_resource type="PackedScene" uid="uid://d4ewokndenqtr" path="res://scenes/weapon/sword.tscn" id="4_genfo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgfig"]
 height = 23.0
@@ -29,18 +30,119 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_unv3p"]
+resource_name = "attack"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponContainer/weapon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.91986, -1.87623]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeaponContainer/weapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(7, -5), Vector2(-7, -5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeaponContainer/weapon:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_qj1bh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponContainer/weapon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.91986]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeaponContainer/weapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, -5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeaponContainer/weapon:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pxxe1"]
+_data = {
+"RESET": SubResource("Animation_qj1bh"),
+"attack": SubResource("Animation_unv3p")
+}
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ds1sw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 18.45)
+position = Vector2(0, -10.55)
 shape = SubResource("CapsuleShape2D_rgfig")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 18)
+position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_0r6x0")
 animation = &"run"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -29)
 zoom = Vector2(3, 3)
+
+[node name="WeaponContainer" type="Node2D" parent="."]
+
+[node name="weapon" type="Node2D" parent="WeaponContainer"]
+position = Vector2(7, -5)
+rotation = 1.91986
+scale = Vector2(1, 1)
+
+[node name="sword" parent="WeaponContainer/weapon" instance=ExtResource("4_genfo")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pxxe1")
+}
