@@ -13,6 +13,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 func teleport_to_jail():
+	$DeathSound.play()
+	self.visible = false
+	await $DeathSound.finished
 	self.queue_free()
 
 func _on_can_hurt_area_entered(area: Area2D) -> void:

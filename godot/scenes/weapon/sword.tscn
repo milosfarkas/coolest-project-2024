@@ -1,15 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4ewokndenqtr"]
+[gd_scene load_steps=4 format=3 uid="uid://d4ewokndenqtr"]
 
 [ext_resource type="Texture2D" uid="uid://o8h1b3kdj53s" path="res://assets/kenney_tiny-dungeon/Tiles/tile_0104.png" id="1_13vpj"]
+[ext_resource type="Script" path="res://scenes/weapon/sword.gd" id="1_ur1uv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2iwsg"]
-size = Vector2(8, 14)
+size = Vector2(6, 12)
 
 [node name="sword" type="Area2D" groups=["hurt"]]
+script = ExtResource("1_ur1uv")
 
 [node name="SwordCollision" type="CollisionShape2D" parent="." groups=["hurt"]]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_2iwsg")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -5)

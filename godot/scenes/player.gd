@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 200.0
 const JUMP_VELOCITY = -320.0
 const ATTACK_VELOCITY = 1600
+@onready var laser_sound = $LaserSound
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -10,6 +11,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animation_player = $AnimationPlayer
 @onready var weapon = $WeaponContainer
 var facing_left: bool = true
+
+
+func _ready():
+	$WeaponContainer/weapon.visible = false
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -47,5 +53,6 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("attack"):
 		animation.play("attack")
+		laser_sound.play()
 	move_and_slide()
 
