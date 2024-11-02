@@ -141,6 +141,7 @@ autoplay = "attack"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -29)
 zoom = Vector2(3, 3)
+position_smoothing_enabled = true
 
 [node name="WeaponContainer" type="Node2D" parent="." groups=["hurt"]]
 

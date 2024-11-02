@@ -46,8 +46,8 @@ shape = SubResource("CapsuleShape2D_i2d4k")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_ajr5b")
-animation = &"idle"
-frame_progress = 0.689376
+animation = &"run"
+frame_progress = 0.354399
 
 [node name="DetectPlayer" type="Area2D" parent="."]
 visible = false
