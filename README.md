@@ -85,12 +85,13 @@ Ha bármilyen javaslatod vagy ötleted van, nyiss egy hibajegyet vagy küldj be 
 
 > TODO: modosítani, ha változik
 
-- https://github.com/milosfarkas/godot-jumpy
-- https://kenney.nl/assets/platformer-pack-industrial
-- https://kenney.nl/assets/ui-pack-sci-fi
-- https://kenney.nl/assets/planets
-- https://kenney.nl/assets/pixel-platformer-industrial-expansion
-- https://kenney.nl/assets/pixel-platformer-blocks
-- https://kenney.nl/assets/platformer-pack-redux
-- https://kenney.nl/assets/platformer-art-requests
-- https://www.youtube.com/watch?v=kPSyUEQds6M&ab_channel=MakerTech
+- [Milos - Jumpy](https://github.com/milosfarkas/godot-jumpy)
+- [Kenney - Platformer Industrial](https://kenney.nl/assets/platformer-pack-industrial)
+- [Kenney - Platformer SciFi](https://kenney.nl/assets/ui-pack-sci-fi)
+- [Kenney - Planets](https://kenney.nl/assets/planets)
+- [Kenney - Platformer Industrial Expansion](https://kenney.nl/assets/pixel-platformer-industrial-expansion)
+- [Kenney - Platformer Blocks](https://kenney.nl/assets/pixel-platformer-blocks)
+- [Kenney - Platformer Redux](https://kenney.nl/assets/platformer-pack-redux)
+- [Kenney - Platformer Art Requests](https://kenney.nl/assets/platformer-art-requests)
+- [How to Create Melee Combat in Godot 4](https://www.youtube.com/watch?v=kPSyUEQds6M&ab_channel=MakerTech)
+- [Godot Recipes: Melee Attack](https://www.youtube.com/watch?v=AaJopFFkmNo)

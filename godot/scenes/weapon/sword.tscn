@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://o8h1b3kdj53s" path="res://assets/kenney_tiny-dungeon/Tiles/tile_0104.png" id="1_13vpj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2iwsg"]
-size = Vector2(6, 12)
+size = Vector2(8, 14)
 
-[node name="sword" type="Area2D"]
+[node name="sword" type="Area2D" groups=["hurt"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="SwordCollision" type="CollisionShape2D" parent="." groups=["hurt"]]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_2iwsg")
 

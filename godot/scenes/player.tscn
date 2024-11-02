@@ -12,6 +12,14 @@ height = 23.0
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_2eexg")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_uuriy")
 }],
 "loop": true,
@@ -29,6 +37,46 @@ animations = [{
 "name": &"run",
 "speed": 10.0
 }]
+
+[sub_resource type="Animation" id="Animation_qj1bh"]
+length = 0.001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponContainer/weapon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.91986]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeaponContainer/weapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, -5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeaponContainer/weapon:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_unv3p"]
 resource_name = "attack"
@@ -71,52 +119,13 @@ tracks/2/keys = {
 "values": [false, true, true, false]
 }
 
-[sub_resource type="Animation" id="Animation_qj1bh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WeaponContainer/weapon:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.91986]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WeaponContainer/weapon:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(7, -5)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WeaponContainer/weapon:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pxxe1"]
 _data = {
 "RESET": SubResource("Animation_qj1bh"),
 "attack": SubResource("Animation_unv3p")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_ds1sw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -126,19 +135,18 @@ shape = SubResource("CapsuleShape2D_rgfig")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_0r6x0")
-animation = &"run"
-autoplay = "idle"
+animation = &"attack"
+autoplay = "attack"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -29)
 zoom = Vector2(3, 3)
 
-[node name="WeaponContainer" type="Node2D" parent="."]
+[node name="WeaponContainer" type="Node2D" parent="." groups=["hurt"]]
 
-[node name="weapon" type="Node2D" parent="WeaponContainer"]
+[node name="weapon" type="Node2D" parent="WeaponContainer" groups=["player"]]
 position = Vector2(7, -5)
 rotation = 1.91986
-scale = Vector2(1, 1)
 
 [node name="sword" parent="WeaponContainer/weapon" instance=ExtResource("4_genfo")]
 

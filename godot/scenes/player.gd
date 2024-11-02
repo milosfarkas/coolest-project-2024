@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -320.0
+const ATTACK_VELOCITY = 1600
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -15,18 +16,15 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Attack.
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_just_pressed("attack"):
 		weapon.scale.x = 1 if facing_left else -1
-		velocity.x = 100
+		velocity.x = -ATTACK_VELOCITY if facing_left else ATTACK_VELOCITY
 		animation_player.play("attack")
-
+	
 	# Handle Jump.
 	if Input.is_action_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-		
-		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
@@ -46,7 +44,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if velocity.y == 0:
 			animation.play("idle")
-			
-		
+	
+	if Input.is_action_pressed("attack"):
+		animation.play("attack")
 	move_and_slide()
 
