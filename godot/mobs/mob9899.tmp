@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://cujl4bkec6wi8"]
+
+[ext_resource type="Script" path="res://mobs/mob1.gd" id="1_2xsrh"]
+[ext_resource type="Texture2D" uid="uid://cpscv4du55fd2" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0004.png" id="1_bbial"]
+[ext_resource type="Texture2D" uid="uid://bkivb1lqv3tny" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0005.png" id="2_stmql"]
+[ext_resource type="AudioStream" uid="uid://ctgmrgvxoibe2" path="res://assets/kenney_sci-fi-sounds/Audio/lowFrequency_explosion_001.ogg" id="4_mhpxt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2d4k"]
+height = 24.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ajr5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bbial")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bbial")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_stmql")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jth1a"]
+radius = 123.016
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u62yi"]
+radius = 12.0
+
+[node name="Mob" type="CharacterBody2D" groups=["mob", "mob1"]]
+script = ExtResource("1_2xsrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_i2d4k")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_ajr5b")
+animation = &"run"
+frame_progress = 0.112257
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
+shape = SubResource("CircleShape2D_jth1a")
+
+[node name="CanHurt" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanHurt"]
+position = Vector2(0, -13)
+shape = SubResource("CapsuleShape2D_u62yi")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_mhpxt")
+
+[connection signal="area_entered" from="CanHurt" to="." method="_on_can_hurt_area_entered"]

@@ -152,6 +152,7 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_ds1sw")
+ATTACK_VELOCITY = 1100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10.55)
@@ -183,3 +184,9 @@ libraries = {
 
 [node name="LaserSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_gvfka")
+
+[node name="WeaponChargerTimer" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true
+
+[connection signal="timeout" from="WeaponChargerTimer" to="." method="_on_timer_timeout"]
