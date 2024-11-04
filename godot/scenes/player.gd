@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
-const JUMP_VELOCITY = -320.0
-const ATTACK_VELOCITY = 1600
+@export var SPEED = 300.0
+@export var JUMP_VELOCITY = -320.0
+@export var ATTACK_VELOCITY = 800
 @onready var laser_sound = $LaserSound
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

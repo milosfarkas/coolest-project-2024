@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx60uft010hnt"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_ab2pk"]
+[ext_resource type="PackedScene" uid="uid://b3hr4ay02j0b4" path="res://scenes/ui.tscn" id="2_epvye"]
+[ext_resource type="PackedScene" uid="uid://be1t130xw8l4k" path="res://scenes/levels/world_slime_battlefield.tscn" id="3_yt3dl"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ab2pk")
+world_scene = ExtResource("3_yt3dl")
+
+[node name="UI" parent="." instance=ExtResource("2_epvye")]

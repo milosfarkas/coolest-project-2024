@@ -450,4 +450,5 @@ position = Vector2(-109, -218)
 scale = Vector2(0.175469, 0.169219)
 texture = ExtResource("10_r45i8")
 
+[connection signal="child_order_changed" from="Mobs" to="." method="_on_mobs_child_order_changed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
