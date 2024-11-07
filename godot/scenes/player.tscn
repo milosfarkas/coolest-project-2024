@@ -152,8 +152,9 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_ds1sw")
+SPEED = 250.0
 JUMP_VELOCITY = -350.0
-ATTACK_VELOCITY = 1400
+ATTACK_VELOCITY = 1700
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10.55)

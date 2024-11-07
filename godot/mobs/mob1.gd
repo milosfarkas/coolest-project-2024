@@ -15,6 +15,7 @@ func _physics_process(delta):
 func teleport_to_jail():
 	$DeathSound.play()
 	self.visible = false
+	$CollisionShape2D.queue_free()
 	await $DeathSound.finished
 	self.queue_free()
 

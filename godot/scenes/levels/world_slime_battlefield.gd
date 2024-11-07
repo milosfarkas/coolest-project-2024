@@ -5,7 +5,7 @@ signal mobs(remaining, all)
 var all_mobs: int
 
 func count_mobs():
-	return $Mobs.get_child_count()
+	return %Mobs.get_child_count()
 
 func _ready() -> void:
 	all_mobs = count_mobs()
