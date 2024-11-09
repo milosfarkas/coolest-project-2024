@@ -1,8 +1,12 @@
 extends CanvasLayer
 
-@onready var label: Label = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/PanelContainer/Label
+@onready var enemies: Label = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/PanelContainer/HBoxContainer/EnemiesLeft
+@onready var player: Label = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/PanelContainer/HBoxContainer/PlayerHealth
 
 
-func set_label(text: String):
-	label.text = text
+func remaining_enemies(num: int):
+	enemies.text = str(num)
+
+func player_health(health: int):
+	player.text = str(health)
 		

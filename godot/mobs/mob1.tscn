@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://ctgmrgvxoibe2" path="res://assets/kenney_sci-fi-sounds/Audio/lowFrequency_explosion_001.ogg" id="4_mhpxt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2d4k"]
+radius = 11.0
 height = 24.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ajr5b"]
@@ -31,7 +32,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jth1a"]
-radius = 123.016
+radius = 82.0549
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u62yi"]
 radius = 12.0
@@ -47,10 +48,8 @@ shape = SubResource("CapsuleShape2D_i2d4k")
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_ajr5b")
 animation = &"run"
-frame_progress = 0.112257
 
 [node name="DetectPlayer" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
 shape = SubResource("CircleShape2D_jth1a")
@@ -64,4 +63,7 @@ shape = SubResource("CapsuleShape2D_u62yi")
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_mhpxt")
 
+[connection signal="body_entered" from="DetectPlayer" to="." method="_on_detect_player_body_entered"]
+[connection signal="body_exited" from="DetectPlayer" to="." method="_on_detect_player_body_exited"]
 [connection signal="area_entered" from="CanHurt" to="." method="_on_can_hurt_area_entered"]
+[connection signal="body_entered" from="CanHurt" to="." method="_on_can_hurt_body_entered"]

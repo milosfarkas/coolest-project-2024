@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://be1t130xw8l4k"]
+[gd_scene load_steps=15 format=3 uid="uid://be1t130xw8l4k"]
 
 [ext_resource type="Script" path="res://scenes/levels/world_slime_battlefield.gd" id="1_d37b5"]
 [ext_resource type="PackedScene" uid="uid://dnj48leyo0unf" path="res://scenes/player.tscn" id="1_lg0ky"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://wlv7sixwpj8v" path="res://assets/kenney_planets/Planets/planet07.png" id="8_3usgk"]
 [ext_resource type="Texture2D" uid="uid://bwnbwe2dpril" path="res://assets/kenney_planets/Planets/planet09.png" id="9_48bnw"]
 [ext_resource type="Texture2D" uid="uid://dkislxn5x6jrg" path="res://assets/kenney_planets/Planets/planet05.png" id="10_r45i8"]
+[ext_resource type="PackedScene" uid="uid://dhko4jof5yly3" path="res://scenes/gameboy_color_rect.tscn" id="12_mbg7a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_350n3"]
 texture = ExtResource("2_tqxcs")
@@ -376,7 +377,7 @@ sources/4 = SubResource("TileSetAtlasSource_350n3")
 script = ExtResource("1_d37b5")
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-1, -1)
+position = Vector2(0, -1)
 scale = Vector2(0.25, 0.25)
 tile_set = SubResource("TileSet_mnmxp")
 format = 2
@@ -411,7 +412,7 @@ position = Vector2(-136, -24)
 position = Vector2(-73, -28)
 
 [node name="CharacterBody2D8" parent="Mobs" instance=ExtResource("3_lj7ii")]
-position = Vector2(36, 96)
+position = Vector2(100, 96.015)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ieikp")
@@ -450,6 +451,13 @@ texture = ExtResource("9_48bnw")
 position = Vector2(-109, -218)
 scale = Vector2(0.175469, 0.169219)
 texture = ExtResource("10_r45i8")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(384, 78)
+
+[node name="ColorRect" parent="Node2D" instance=ExtResource("12_mbg7a")]
+clip_contents = true
+custom_minimum_size = Vector2(32, 48)
 
 [connection signal="child_order_changed" from="Mobs" to="." method="_on_mobs_child_order_changed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
