@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://wlv7sixwpj8v" path="res://assets/kenney_planets/Planets/planet07.png" id="8_3usgk"]
 [ext_resource type="Texture2D" uid="uid://bwnbwe2dpril" path="res://assets/kenney_planets/Planets/planet09.png" id="9_48bnw"]
 [ext_resource type="Texture2D" uid="uid://dkislxn5x6jrg" path="res://assets/kenney_planets/Planets/planet05.png" id="10_r45i8"]
-[ext_resource type="PackedScene" uid="uid://dhko4jof5yly3" path="res://scenes/gameboy_color_rect.tscn" id="12_mbg7a"]
+[ext_resource type="PackedScene" uid="uid://bltl0nd6hp26l" path="res://scenes/exit.tscn" id="12_gv0sb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_350n3"]
 texture = ExtResource("2_tqxcs")
@@ -452,12 +452,9 @@ position = Vector2(-109, -218)
 scale = Vector2(0.175469, 0.169219)
 texture = ExtResource("10_r45i8")
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(384, 78)
-
-[node name="ColorRect" parent="Node2D" instance=ExtResource("12_mbg7a")]
-clip_contents = true
-custom_minimum_size = Vector2(32, 48)
+[node name="Exit" parent="." instance=ExtResource("12_gv0sb")]
+position = Vector2(385, 78)
+scale = Vector2(1, 1.6)
 
 [connection signal="child_order_changed" from="Mobs" to="." method="_on_mobs_child_order_changed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

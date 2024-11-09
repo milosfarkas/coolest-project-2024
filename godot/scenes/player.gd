@@ -94,6 +94,10 @@ func die():
 	print("meghalt")
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
+func next_level():
+	print("Mr Kicsi megy a kovetkezo palyara")
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "the_attack_animation":

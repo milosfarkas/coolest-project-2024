@@ -13,6 +13,7 @@ func _ready() -> void:
 func refresh_ui(mob_count, _all):
 	$UI.remaining_enemies(mob_count)
 	if mob_count == 0:
+		world.open_exit()
 		$WinSound.play()
 		
 	

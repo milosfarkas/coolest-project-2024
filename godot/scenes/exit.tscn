@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bltl0nd6hp26l"]
+
+[ext_resource type="Shader" path="res://gameboy.gdshader" id="1_se278"]
+[ext_resource type="Script" path="res://scenes/exit.gd" id="2_1n17i"]
+[ext_resource type="Texture2D" uid="uid://bkudwmaai8xka" path="res://assets/white.png" id="2_sxaes"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pwryg"]
+shader = ExtResource("1_se278")
+shader_parameter/pallette_white = Color(0.988235, 0.980392, 0.988235, 1)
+shader_parameter/pallette_light_grey = Color(0.67451, 0.14902, 0.141176, 1)
+shader_parameter/pallette_dark_grey = Color(0.92549, 0.541176, 0.54902, 1)
+shader_parameter/pallette_black = Color(0.0156863, 0.0941176, 0.0156863, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmfby"]
+size = Vector2(28, 27)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e70ds"]
+shader = ExtResource("1_se278")
+shader_parameter/pallette_white = Color(0.988235, 0.980392, 0.988235, 1)
+shader_parameter/pallette_light_grey = Color(0.1407, 0.67, 0.211273, 1)
+shader_parameter/pallette_dark_grey = Color(0.5394, 0.93, 0.59148, 1)
+shader_parameter/pallette_black = Color(0.0156863, 0.0941176, 0.0156863, 1)
+
+[node name="Exit" type="Area2D" groups=["exit"]]
+material = SubResource("ShaderMaterial_pwryg")
+script = ExtResource("2_1n17i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["exit"]]
+shape = SubResource("RectangleShape2D_tmfby")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_e70ds")
+position = Vector2(0, -1.43051e-06)
+scale = Vector2(32, 32)
+texture = ExtResource("2_sxaes")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

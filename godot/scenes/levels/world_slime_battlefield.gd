@@ -11,7 +11,11 @@ var all_mobs: int
 
 func count_mobs():
 	return mobs_node.get_child_count()
-
+	
+	
+func open_exit():
+	$Exit.open = true
+	
 
 func _ready() -> void:
 	all_mobs = count_mobs()
