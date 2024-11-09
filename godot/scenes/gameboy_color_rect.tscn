@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhko4jof5yly3"]
+
+[ext_resource type="Shader" path="res://gameboy.gdshader" id="1_3tky4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ny4g"]
+shader = ExtResource("1_3tky4")
+shader_parameter/pallette_white = Color(0.9801, 0.99, 0.98142, 1)
+shader_parameter/pallette_light_grey = Color(0.1407, 0.67, 0.211273, 1)
+shader_parameter/pallette_dark_grey = Color(0.5394, 0.93, 0.59148, 1)
+shader_parameter/pallette_black = Color(0.0153, 0.09, 0.02526, 1)
+
+[node name="ColorRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_7ny4g")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

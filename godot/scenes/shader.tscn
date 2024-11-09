@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dggi1iwx11lj3"]
+
+[ext_resource type="PackedScene" uid="uid://dhko4jof5yly3" path="res://scenes/gameboy_color_rect.tscn" id="1_pji7d"]
+
+[node name="Shader" type="CanvasLayer"]
+
+[node name="ColorRect" parent="." instance=ExtResource("1_pji7d")]

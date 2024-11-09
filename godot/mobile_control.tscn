@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://chm6l3aoj62kl"]
+
+[ext_resource type="Texture2D" uid="uid://s35plg3gjs2o" path="res://assets/kenney_onscreen-controls/Sprites/transparent-light/transparentLight22.png" id="1_4l452"]
+[ext_resource type="Script" path="res://mobile_control.gd" id="1_dpuow"]
+[ext_resource type="Texture2D" uid="uid://d0kw8xs8uri8f" path="res://assets/kenney_onscreen-controls/Sprites/shaded-light/shadedLight24.png" id="2_gsoi3"]
+[ext_resource type="Texture2D" uid="uid://c2q0eftisdav" path="res://assets/kenney_onscreen-controls/Sprites/transparent-light/transparentLight23.png" id="3_v43da"]
+[ext_resource type="Texture2D" uid="uid://bcd64af0akjbo" path="res://assets/kenney_onscreen-controls/Sprites/shaded-light/shadedLight25.png" id="4_b2cg4"]
+[ext_resource type="Texture2D" uid="uid://trjt6fkxtwh7" path="res://assets/kenney_onscreen-controls/Sprites/transparent-light/transparentLight24.png" id="5_glcvb"]
+[ext_resource type="Texture2D" uid="uid://cmsqbnwtp2yi" path="res://assets/kenney_onscreen-controls/Sprites/shaded-light/shadedLight26.png" id="6_7walo"]
+[ext_resource type="Texture2D" uid="uid://b0lpvcp6rofxr" path="res://assets/kenney_onscreen-controls/Sprites/transparent-light/transparentLight45.png" id="7_135s5"]
+[ext_resource type="Texture2D" uid="uid://bc0sh7wrvmbq5" path="res://assets/kenney_onscreen-controls/Sprites/shaded-light/shadedLight47.png" id="8_dfda8"]
+
+[node name="MobileControl" type="CanvasLayer"]
+script = ExtResource("1_dpuow")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0.376471)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="ButtonLeft" type="TouchScreenButton" parent="MarginContainer/HBoxContainer"]
+position = Vector2(0, -80)
+texture_normal = ExtResource("2_gsoi3")
+texture_pressed = ExtResource("1_4l452")
+action = "ui_left"
+
+[node name="ButtonRight" type="TouchScreenButton" parent="MarginContainer/HBoxContainer"]
+position = Vector2(90, -80)
+texture_normal = ExtResource("4_b2cg4")
+texture_pressed = ExtResource("3_v43da")
+action = "ui_right"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="ButtonJump" type="TouchScreenButton" parent="MarginContainer/VBoxContainer"]
+position = Vector2(-80, -80)
+texture_normal = ExtResource("6_7walo")
+texture_pressed = ExtResource("5_glcvb")
+action = "jump"
+
+[node name="ButtonAttack" type="TouchScreenButton" parent="MarginContainer/VBoxContainer"]
+position = Vector2(-80, -170)
+texture_normal = ExtResource("8_dfda8")
+texture_pressed = ExtResource("7_135s5")
+action = "attack"
