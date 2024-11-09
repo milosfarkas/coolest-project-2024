@@ -12,6 +12,9 @@ func _ready() -> void:
 	
 func refresh_ui(mob_count, _all):
 	$UI.remaining_enemies(mob_count)
+	if mob_count == 0:
+		$WinSound.play()
+		
 	
 func changed_player_health(h):
 	$UI.player_health(h)

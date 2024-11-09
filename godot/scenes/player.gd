@@ -13,6 +13,7 @@ var attacking = false
 @export var ATTACK_VELOCITY = 800
 @onready var laser_sound = $LaserSound
 @onready var damage_sound = $DamageSound
+@onready var dying_sound = $DyingSound
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -58,9 +59,10 @@ func _physics_process(delta):
 			animation.play("idle")
 	
 	if Input.is_action_pressed("attack") and not attacking:
-		damagable = false
 		attacking = true
+		damagable = false
 
+		# DASH
 		weapon.scale.x = 1 if facing_left else -1
 		velocity.x = -ATTACK_VELOCITY if facing_left else ATTACK_VELOCITY
 
@@ -80,8 +82,17 @@ func damage(hit: int):
 		health_changed.emit(current_health)
 		await damage_sound.finished
 		damagable = true
-	
-	
+		if current_health == 0:
+			die()
+
+
+func die():
+	print("haldoklik")
+	visible = false
+	dying_sound.play()
+	await dying_sound.finished
+	print("meghalt")
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

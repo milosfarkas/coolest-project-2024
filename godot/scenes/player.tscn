@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dnj48leyo0unf"]
+[gd_scene load_steps=13 format=3 uid="uid://dnj48leyo0unf"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_ds1sw"]
 [ext_resource type="Texture2D" uid="uid://7ysvcuvyty2h" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0000.png" id="1_uuriy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d4ewokndenqtr" path="res://scenes/weapon/sword.tscn" id="4_genfo"]
 [ext_resource type="AudioStream" uid="uid://bbxd6ynosyyup" path="res://assets/kenney_sci-fi-sounds/Audio/laserLarge_002.ogg" id="5_gvfka"]
 [ext_resource type="AudioStream" uid="uid://df1n3qh5agv7u" path="res://assets/kenney_sci-fi-sounds/Audio/forceField_001.ogg" id="6_woiv7"]
+[ext_resource type="AudioStream" uid="uid://c1gy3phknycoc" path="res://assets/kenney_sci-fi-sounds/Audio/explosionCrunch_004.ogg" id="7_5ttof"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rgfig"]
 height = 23.0
@@ -191,6 +192,9 @@ stream = ExtResource("5_gvfka")
 
 [node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_woiv7")
+
+[node name="DyingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_5ttof")
 
 [node name="WeaponChargerTimer" type="Timer" parent="."]
 wait_time = 1.2

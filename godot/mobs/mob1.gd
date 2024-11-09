@@ -26,9 +26,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 func teleport_to_jail():
-	$DeathSound.play()
-	if collision:
+	if is_instance_valid(collision):
 		collision.queue_free()
+	$DeathSound.play()
 	visible = false
 	await $DeathSound.finished
 	queue_free()

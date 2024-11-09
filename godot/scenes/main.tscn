@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx60uft010hnt"]
+[gd_scene load_steps=6 format=3 uid="uid://cx60uft010hnt"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ab2pk"]
 [ext_resource type="PackedScene" uid="uid://b3hr4ay02j0b4" path="res://scenes/ui.tscn" id="2_epvye"]
 [ext_resource type="PackedScene" uid="uid://be1t130xw8l4k" path="res://scenes/levels/world_slime_battlefield.tscn" id="3_yt3dl"]
+[ext_resource type="AudioStream" uid="uid://doc1kaitpj0vo" path="res://assets/kenney_sci-fi-sounds/Audio/computerNoise_000.ogg" id="4_jyvq8"]
+[ext_resource type="PackedScene" uid="uid://chm6l3aoj62kl" path="res://mobile_control.tscn" id="5_l7quf"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ab2pk")
 world_scene = ExtResource("3_yt3dl")
 
 [node name="UI" parent="." instance=ExtResource("2_epvye")]
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jyvq8")
+
+[node name="MobileControl" parent="." instance=ExtResource("5_l7quf")]
