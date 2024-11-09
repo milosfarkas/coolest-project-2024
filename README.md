@@ -1,13 +1,16 @@
-# coolest-project-2024
+# Űrhajós Mr. Kicsi
+`coolest-project-2024`
 
-![cave 1](images/cave1.png)
+> [Próbáld ki a játékot az itch.io-n!](https://milosfarkas.itch.io/urhajos-mr-kicsi)  
+> *Jelszó:* `coolest`
+
+![Cave 1](images/cave1.png)
 
 ## Projekt leírása
 
-Űrhajós játék, ahol az űrlényeket egy cellába kell juttatni, és különböző pályákon kell végigmenni. Az elején van egy kipróbálós pálya, ahol megismerkedhetsz a mechanikákkal. A játék Android telefonon játszható. Különböző fegyverek közül lehet választani: katana, íj, gépfegyver. Minden fegyver úgy van tervezve, hogy amit eltalálsz, az azonnal teleportál a börtön cellába. A fegyvereket az elején a gyakorló pályán kipróbálhatod.
+Az **Űrhajós Mr. Kicsi** egy űrlényekkel teli, izgalmas játék, ahol célod, hogy az idegen lényeket a börtöncellájukba teleportáld egy speciális lézerkatana segítségével. A pályákon végigmenve egyre nehezebb kihívásokkal nézel szembe.
 
-![Cool Game Image 2](images/cool2.jpg)
-
+![Cool Game Image 2](images/cool2.jpg)  
 ![Cool Game Image 1](images/cool1.jpg)
 
 ## Mesélj nekünk a projektedről!
@@ -15,59 +18,31 @@
 ### Miért ezt a projektet készítetted el?
 ???
 
-### Mi volt a legnagyobb nehézség a projekt elkészítése során és hogyan oldottad meg a felmerülő problémákat?
+### Mi volt a legnagyobb nehézség a projekt elkészítése során, és hogyan oldottad meg a felmerülő problémákat?
 ???
 
 ### Van bármi, amit másképp csinálnál, vagy amit még fejleszteni szeretnél a projekteden?
 ???
 
-# Űrlény Teleportáló Játék
-
-Üdvözlünk az **Űrlény Teleportáló Játékban**, egy izgalmas kalandban, ahol a célod, hogy az idegen lényeket teleportáld a börtöncellákba a különböző pályákon keresztül!
-
 ## 🛸 Játék Áttekintés
 
-Ebben az űrben játszódó játékban az a feladatod, hogy az űrlényeket eljuttasd a kijelölt börtöncelláikba. Különböző pályákon kell végigmenned, beleértve egy **gyakorló pályát** is, ahol megismerkedhetsz az alapmechanikákkal.
+Ebben az űrben játszódó játékban az a feladatod, hogy az űrlényeket a kijelölt cellákba juttasd. Kezdd a gyakorló pályával, és ismerd meg a játék alapmechanikáját, mielőtt a fő küldetésekbe belekezdesz.
 
 ### 🎮 Platform
 
-- **Android**: A játék Android telefonokra készült, könnyen kezelhető, izgalmas mobiljáték.
-
-## 🚀 Játék Funkciók
-
-- **Gyakorló Mód**: Kezdd a gyakorló pályával, hogy megismerd a mechanikákat, mielőtt belemerülsz a fő küldetésekbe.
-- **Fegyverválasztás**: Válassz a különböző fegyverek közül, mindegyik egyedi játékmenetet kínál:
-  - **Katana**: Vágd át magad az akadályokon!
-  - **Íj**: Célozz pontosan, és lődd el a nyilaidat!
-  - **Gépfegyver**: Gyors tüzelés az űrlények elfogásához.
-
-  *Minden fegyver úgy lett tervezve, hogy amit eltalálsz, az azonnal teleportál a börtöncellába!*
-
-- **Teleportáló Mechanika**: A fő mechanika lényege, hogy ha eltalálod az űrlényeket a fegyvereddel, azok teleportálnak a börtöncellába.
+- **Böngésző**: A játék böngészőben futtatható, mobilon és asztali gépen egyaránt.
 
 ## 🎯 Játékmenet
 
-1. **Válassz Fegyvert**: Választhatsz Katana, Íj, vagy Gépfegyver közül.
-2. **Teszteld a Gyakorló Pályán**: Válaszd ki a fegyveredet a gyakorló laborodban, hogy megismerd a működését.
-3. **Űrlények Elfogása**: Menj végig a különböző pályákon, és fogd el az űrlényeket úgy, hogy eltalálod őket.
-4. **Pályák Teljesítése**: Teleportáld sikeresen az összes űrlényt a cellába, hogy tovább léphess a következő pályára.
-
-## 📱 Telepítés
-
-A játék Android eszközökre érhető (majd) el. Töltsd le az itch.io oldalamról, és kezdj el játszani! 
-> TODO: Link
+1. **Űrlények Elfogása**: Járd be a pályákat, és teleportáld az űrlényeket a cellákba.
+2. **Pályák Teljesítése**: Az összes űrlényt sikeresen teleporáltad? Lépj tovább a következő pályára!
 
 ## 🔧 Irányítás
 
-- **Mozgás**: A jobbra és balra nyilakkal lehet sétálni.
-- **Ugrás**: Az **A** gombbal tudsz ugrani.
-- **Eszköz használata**: A **B** gombbal használhatsz eszközöket, például kinyithatod az ajtókat.
-- **Támadás**: A joystickkal lőhetsz, vagy aktiválhatod a fegyverhez tartozó speciális támadási technikákat.
-
-## 💡 Tippek
-
-- Használd a gyakorló pályát, hogy megszokd a teleportáló mechanikát.
-- Minden fegyvernek más-más erősségei vannak – találd meg, melyik illik a játékstílusodhoz!
+- **Mozgás**: A **jobbra** és **balra nyilakkal** sétálhatsz.
+- **Ugrás**: A **FEL** gombbal ugráshoz.
+- **Támadás**: A **Ctrl** gombbal használhatod a lézerkardot. Várj egy kis időt a következő támadás előtt.
+- **Mobil Kontroller**: A **B** gombbal a mobil kontrollert megjelenítheted vagy elrejtheted.
 
 ## 📜 Licenc
 
@@ -75,15 +50,78 @@ Ez a projekt az MIT licenc alatt áll – további részletekért lásd a [LICEN
 
 ## Fejlesztési környezet
 
-Ez a projekt a **Godot Engine** használatával kerül megvalósításra.
+A projekt a **Godot Engine** segítségével valósult meg.
 
 ---
 
-Ha bármilyen javaslatod vagy ötleted van, nyiss egy hibajegyet vagy küldj be egy pull requestet!
+Ha bármilyen javaslatod vagy ötleted van, kérlek, írd meg!
 
 ## Felhasznált források
 
-> TODO: modosítani, ha változik
+> További módosítás esetén frissítendő.
+
+- [Milos - Jumpy](https://github.com/milosfarkas/godot-jumpy)
+- [Kenney - Platformer Industrial](https://kenney.nl/assets/platformer-pack-industrial)
+- [Kenney - Platformer SciFi](https://kenney.nl/assets/ui-pack-sci-fi)
+- [Kenney - Planets](https://kenney.nl/assets/planets)
+- [Kenney - Platformer Industrial Expansion](https://kenney.nl/assets/pixel-platformer-industrial-expansion)
+- [Kenney - Platformer Blocks](https://kenney.nl/assets/pixel-platformer-blocks)
+- [Kenney - Platformer Redux](https://kenney.nl/assets/platformer-pack-redux)
+- [Kenney - Platformer Art Requests](https://kenney.nl/assets/platformer-art-requests)
+- [How to Create Melee Combat in Godot 4](https://www.youtube.com/watch?v=kPSyUEQds6M&ab_channel=MakerTech)
+- [Godot Recipes: Melee Attack](https://www.youtube.com/watch?v=AaJopFFkmNo)
+
+> ---
+# Mr. Astro Junior
+`coolest-project-2024`
+
+> [Try the game on itch.io!](https://milosfarkas.itch.io/urhajos-mr-kicsi)  
+> *Password:* `coolest`
+
+![Cave 1](images/cave1.png)
+
+## Project Description
+
+**Mr. Astro Junior** is an exciting game filled with aliens, where your goal is to teleport them into prison cells using a special laser katana. As you progress through the levels, you’ll face increasingly challenging tasks.
+
+![Cool Game Image 2](images/cool2.jpg)  
+![Cool Game Image 1](images/cool1.jpg)
+
+## 🛸 Game Overview
+
+In this space-themed game, your task is to capture aliens and teleport them into designated cells. Start with a practice level to learn the basic mechanics before diving into the main missions.
+
+### 🎮 Platform
+
+- **Browser**: Playable in browsers on both mobile and desktop devices.
+
+## 🎯 Gameplay
+
+1. **Alien Capture**: Explore each level and teleport aliens into cells.
+2. **Level Completion**: Successfully teleport all aliens to progress to the next level!
+
+## 🔧 Controls
+
+- **Movement**: Use the **left** and **right arrow keys** to walk.
+- **Jump**: Press the **UP arrow** to jump.
+- **Attack**: Use the **Ctrl key** to activate the laser sword; wait a moment before the next attack.
+- **Mobile Controller**: Toggle the mobile controller with the **B key**.
+
+## 📜 License
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
+## Development Environment
+
+The project is developed using **Godot Engine**.
+
+---
+
+If you have any suggestions or ideas, please share them!
+
+## Resources Used
+
+> Update as needed.
 
 - [Milos - Jumpy](https://github.com/milosfarkas/godot-jumpy)
 - [Kenney - Platformer Industrial](https://kenney.nl/assets/platformer-pack-industrial)
