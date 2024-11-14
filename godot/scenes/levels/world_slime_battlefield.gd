@@ -5,6 +5,7 @@ signal changed_player_health(health)
 
 @onready var mobs_node = $Mobs
 @onready var player = $Player
+@onready var exit = $Exit
 
 var all_mobs: int
 
@@ -14,7 +15,8 @@ func count_mobs():
 	
 	
 func open_exit():
-	$Exit.open = true
+	if is_instance_valid(exit):
+		exit.open = true
 	
 
 func _ready() -> void:
