@@ -3,8 +3,7 @@ class_name Urhajos_Mr_Kicsi
 
 signal health_changed(health)
 
-const max_health = 10
-var current_health = 10
+var current_health = 3
 var damagable = true
 var attacking = false
 
@@ -26,6 +25,7 @@ var facing_left: bool = true
 
 func _ready():
 	$WeaponContainer/weapon.visible = false
+	health_changed.emit(current_health)
 
 
 func _physics_process(delta):
@@ -85,6 +85,9 @@ func damage(hit: int):
 		if current_health == 0:
 			die()
 
+func reload():
+	await get_tree().create_timer(2.0).timeout
+	get_tree().change_scene_to_file("res://scenes/main.tscn")	
 
 func die():
 	print("haldoklik")
@@ -92,12 +95,15 @@ func die():
 	dying_sound.play()
 	await dying_sound.finished
 	print("meghalt")
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	reload()
+
 
 func next_level():
-	print("Mr Kicsi megy a kovetkezo palyara")
-	await get_tree().create_timer(2.0).timeout
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	var _current_level = Backpack.current_level
+	var _next_level = _current_level + 1
+	Backpack.current_level = _next_level
+	print("Mr Kicsi megy a kovetkezo palyara: ", str(_current_level), "->", str(_next_level))
+	reload()
 	
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

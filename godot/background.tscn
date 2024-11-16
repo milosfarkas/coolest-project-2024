@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://d301c2ae00m1y"]
+
+[ext_resource type="Texture2D" uid="uid://23fe0jmd63h" path="res://assets/vecteezy_night-shining-starry-sky-blue-space-background-with-stars_11418726.jpg" id="1_h43bd"]
+[ext_resource type="Texture2D" uid="uid://bev82b0lmpsx" path="res://assets/kenney_planets/Planets/planet02.png" id="2_6ilwm"]
+[ext_resource type="Texture2D" uid="uid://csu0gas7r2r24" path="res://assets/kenney_planets/Planets/planet03.png" id="3_vlraw"]
+[ext_resource type="Texture2D" uid="uid://wlv7sixwpj8v" path="res://assets/kenney_planets/Planets/planet07.png" id="4_3v2og"]
+[ext_resource type="Texture2D" uid="uid://bwnbwe2dpril" path="res://assets/kenney_planets/Planets/planet09.png" id="5_7oreg"]
+[ext_resource type="Texture2D" uid="uid://dkislxn5x6jrg" path="res://assets/kenney_planets/Planets/planet05.png" id="6_8noq2"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Stars" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-68.1967, -19.5)
+scale = Vector2(1.64117, 1.64117)
+texture = ExtResource("1_h43bd")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-245, 2)
+scale = Vector2(0.121094, 0.132813)
+texture = ExtResource("2_6ilwm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(354, -113)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("3_vlraw")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(122, -12)
+scale = Vector2(0.201797, 0.186172)
+texture = ExtResource("4_3v2og")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(243, -176)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("5_7oreg")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-109, -218)
+scale = Vector2(0.175469, 0.169219)
+texture = ExtResource("6_8noq2")

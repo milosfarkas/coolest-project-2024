@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5kfp47gnfqoo"]
+[gd_scene load_steps=10 format=3 uid="uid://b5kfp47gnfqoo"]
 
 [ext_resource type="PackedScene" uid="uid://dnj48leyo0unf" path="res://scenes/player.tscn" id="1_hj6du"]
+[ext_resource type="Script" path="res://scenes/levels/demo_world.gd" id="1_tso4x"]
 [ext_resource type="Texture2D" uid="uid://mmib0m82vaxh" path="res://assets/kenney_platformer-pack-industrial/Tilesheet/platformerPack_industrial_tilesheet.png" id="2_o847g"]
 [ext_resource type="PackedScene" uid="uid://cujl4bkec6wi8" path="res://mobs/mob1.tscn" id="3_6n4op"]
+[ext_resource type="PackedScene" uid="uid://bltl0nd6hp26l" path="res://scenes/exit.tscn" id="5_pt1pb"]
+[ext_resource type="AudioStream" uid="uid://crwawatiapkr4" path="res://assets/music/urhajos-mister-kicsi.ogg" id="6_66q2q"]
+[ext_resource type="PackedScene" uid="uid://d301c2ae00m1y" path="res://background.tscn" id="7_c63wr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_350n3"]
 texture = ExtResource("2_o847g")
@@ -361,10 +365,16 @@ tile_size = Vector2i(70, 70)
 physics_layer_0/collision_layer = 1
 sources/4 = SubResource("TileSetAtlasSource_350n3")
 
-[node name="DemoWorld" type="Node2D"]
+[node name="DemoWorld" type="Node2D" node_paths=PackedStringArray("mobs_node", "player", "exit", "music")]
+script = ExtResource("1_tso4x")
+mobs_node = NodePath("Mobs")
+player = NodePath("Player")
+exit = NodePath("Exit")
+music = NodePath("AudioStreamPlayer")
 
 [node name="Player" parent="." instance=ExtResource("1_hj6du")]
 position = Vector2(118, 156)
+scale = Vector2(0.8, 0.8)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, -1)
@@ -377,3 +387,12 @@ layer_0/tile_data = PackedInt32Array(393210, 262148, 3, -65525, 4, 2, 327691, 4,
 
 [node name="CharacterBody2D" parent="Mobs" instance=ExtResource("3_6n4op")]
 position = Vector2(-40, 192)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_66q2q")
+
+[node name="Background" parent="." instance=ExtResource("7_c63wr")]
+
+[node name="Exit" parent="." instance=ExtResource("5_pt1pb")]
+position = Vector2(165, 165)
+scale = Vector2(1.6, 1.64)
