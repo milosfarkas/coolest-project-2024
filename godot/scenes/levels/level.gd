@@ -19,7 +19,7 @@ func count_mobs():
 	
 func open_exit():
 	if is_instance_valid(exit):
-		exit.open = true
+		exit.visible = true
 	
 
 func initialize() -> void:

@@ -6,6 +6,8 @@ signal health_changed(health)
 var current_health = 3
 var damagable = true
 var attacking = false
+var dying = false
+var already_going_to_next_level = false
 
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -320.0
@@ -89,21 +91,27 @@ func reload():
 	await get_tree().create_timer(2.0).timeout
 	get_tree().change_scene_to_file("res://scenes/main.tscn")	
 
+
+
 func die():
-	print("haldoklik")
-	visible = false
-	dying_sound.play()
-	await dying_sound.finished
-	print("meghalt")
-	reload()
+	if not dying:
+		dying = true
+		print("haldoklik")
+		visible = false
+		dying_sound.play()
+		await dying_sound.finished
+		print("meghalt")
+		reload()
 
 
 func next_level():
-	var _current_level = Backpack.current_level
-	var _next_level = _current_level + 1
-	Backpack.current_level = _next_level
-	print("Mr Kicsi megy a kovetkezo palyara: ", str(_current_level), "->", str(_next_level))
-	reload()
+	if not already_going_to_next_level:
+		already_going_to_next_level = true
+		var _current_level = Backpack.current_level
+		var _next_level = _current_level + 1
+		Backpack.current_level = _next_level
+		print("Mr Kicsi megy a kovetkezo palyara: ", str(_current_level), "->", str(_next_level))
+		reload()
 	
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
