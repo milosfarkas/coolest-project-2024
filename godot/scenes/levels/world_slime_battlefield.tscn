@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://be1t130xw8l4k"]
+[gd_scene load_steps=11 format=3 uid="uid://be1t130xw8l4k"]
 
 [ext_resource type="Script" path="res://scenes/levels/world_slime_battlefield.gd" id="1_d37b5"]
 [ext_resource type="PackedScene" uid="uid://dnj48leyo0unf" path="res://scenes/player.tscn" id="1_lg0ky"]
 [ext_resource type="Texture2D" uid="uid://mmib0m82vaxh" path="res://assets/kenney_platformer-pack-industrial/Tilesheet/platformerPack_industrial_tilesheet.png" id="2_tqxcs"]
 [ext_resource type="PackedScene" uid="uid://cujl4bkec6wi8" path="res://mobs/mob1.tscn" id="3_lj7ii"]
+[ext_resource type="PackedScene" uid="uid://2n5qng46igiv" path="res://mobs/mob2.tscn" id="5_e7n7l"]
 [ext_resource type="AudioStream" uid="uid://nadq860am6p3" path="res://assets/music/urhajos-mister-kicsi2.ogg" id="5_ieikp"]
 [ext_resource type="PackedScene" uid="uid://d301c2ae00m1y" path="res://background.tscn" id="6_i5vvk"]
 [ext_resource type="PackedScene" uid="uid://bltl0nd6hp26l" path="res://scenes/exit.tscn" id="12_gv0sb"]
@@ -412,6 +413,9 @@ position = Vector2(-73, -28)
 
 [node name="CharacterBody2D8" parent="Mobs" instance=ExtResource("3_lj7ii")]
 position = Vector2(100, 96.015)
+
+[node name="Mob2" parent="Mobs" instance=ExtResource("5_e7n7l")]
+position = Vector2(385, 84)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ieikp")

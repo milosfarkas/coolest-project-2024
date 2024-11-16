@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cujl4bkec6wi8"]
+[gd_scene load_steps=9 format=3 uid="uid://2n5qng46igiv"]
 
-[ext_resource type="Script" path="res://mobs/mob1.gd" id="1_2xsrh"]
-[ext_resource type="Texture2D" uid="uid://cpscv4du55fd2" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0004.png" id="1_bbial"]
-[ext_resource type="Texture2D" uid="uid://bkivb1lqv3tny" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0005.png" id="2_stmql"]
-[ext_resource type="AudioStream" uid="uid://ctgmrgvxoibe2" path="res://assets/kenney_sci-fi-sounds/Audio/lowFrequency_explosion_001.ogg" id="4_mhpxt"]
+[ext_resource type="Script" path="res://mobs/mob2.gd" id="1_msq5u"]
+[ext_resource type="Texture2D" uid="uid://cpscv4du55fd2" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0004.png" id="2_prmo7"]
+[ext_resource type="Texture2D" uid="uid://bkivb1lqv3tny" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0005.png" id="3_6jokf"]
+[ext_resource type="AudioStream" uid="uid://ctgmrgvxoibe2" path="res://assets/kenney_sci-fi-sounds/Audio/lowFrequency_explosion_001.ogg" id="4_wlnwr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2d4k"]
 radius = 11.0
@@ -13,7 +13,7 @@ height = 24.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_bbial")
+"texture": ExtResource("2_prmo7")
 }],
 "loop": true,
 "name": &"idle",
@@ -21,10 +21,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_bbial")
+"texture": ExtResource("2_prmo7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_stmql")
+"texture": ExtResource("3_6jokf")
 }],
 "loop": true,
 "name": &"run",
@@ -37,12 +37,16 @@ radius = 82.0549
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u62yi"]
 radius = 12.0
 
-[node name="Mob1" type="CharacterBody2D" node_paths=PackedStringArray("animation_sprite", "death_sound", "detect_player_area", "hurt_area") groups=["mob", "mob1"]]
-script = ExtResource("1_2xsrh")
+[node name="Mob2" type="CharacterBody2D" node_paths=PackedStringArray("animation_sprite", "death_sound", "detect_player_area", "hurt_area") groups=["mob", "mob1"]]
+modulate = Color(1, 1, 1, 0.470588)
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_msq5u")
+SPEED = 40
 animation_sprite = NodePath("AnimatedSprite2D")
 death_sound = NodePath("DeathSound")
 detect_player_area = NodePath("DetectPlayer")
 hurt_area = NodePath("CanHurt")
+damage_points = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -12)
@@ -61,8 +65,9 @@ shape = SubResource("CircleShape2D_jth1a")
 [node name="CanHurt" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanHurt"]
+modulate = Color(0.408329, 0.408329, 0.408329, 0.501961)
 position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_u62yi")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_mhpxt")
+stream = ExtResource("4_wlnwr")
