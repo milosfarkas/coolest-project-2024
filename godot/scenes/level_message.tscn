@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsay0k3hdghud"]
+
+[ext_resource type="FontFile" uid="uid://b5h7hp0a6vfyj" path="res://assets/kenney_ui-pack-space-expansion/Font/Kenney Future.ttf" id="1_chq7w"]
+
+[node name="Label" type="Label"]
+offset_left = -12.0
+offset_top = 122.0
+offset_right = 145.0
+offset_bottom = 161.0
+theme_override_colors/font_color = Color(0.233925, 0.233925, 0.233925, 1)
+theme_override_colors/font_shadow_color = Color(0.537255, 0.929412, 0.592157, 1)
+theme_override_fonts/font = ExtResource("1_chq7w")
+theme_override_font_sizes/font_size = 9
+text = "use your laser katana 
+to teleport the aliens 
+to the prison"

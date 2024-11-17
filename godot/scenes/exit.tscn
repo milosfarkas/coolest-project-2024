@@ -22,6 +22,7 @@ shader_parameter/pallette_dark_grey = Color(0.5394, 0.93, 0.59148, 1)
 shader_parameter/pallette_black = Color(0.0156863, 0.0941176, 0.0156863, 1)
 
 [node name="Exit" type="Area2D" groups=["exit"]]
+modulate = Color(40.541, 42.703, 0, 1)
 material = SubResource("ShaderMaterial_pwryg")
 script = ExtResource("2_1n17i")
 

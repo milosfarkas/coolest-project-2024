@@ -7,6 +7,7 @@ class_name Mob
 @export var detect_player_area: Area2D
 @export var hurt_area: Area2D
 @export var damage_points: int = 1
+@export var collision: CollisionShape2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chase = false
@@ -14,6 +15,7 @@ var player: Urhajos_Mr_Kicsi
 
 
 func initialize():
+	SPEED *= Backpack.mob_speed()
 	animation_sprite.play("idle")
 	detect_player_area.connect("body_entered", _on_detect_player_body_entered)
 	detect_player_area.connect("body_exited", _on_detect_player_body_exited)
@@ -36,8 +38,8 @@ func _physics_process(delta):
 
 
 func teleport_to_jail():
-	if is_instance_valid(hurt_area):
-		hurt_area.queue_free()
+	if is_instance_valid(collision):
+		collision.queue_free()
 	death_sound.play()
 	visible = false
 	await death_sound.finished

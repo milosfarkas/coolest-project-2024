@@ -37,12 +37,13 @@ radius = 82.0549
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u62yi"]
 radius = 12.0
 
-[node name="Mob1" type="CharacterBody2D" node_paths=PackedStringArray("animation_sprite", "death_sound", "detect_player_area", "hurt_area") groups=["mob", "mob1"]]
+[node name="Mob1" type="CharacterBody2D" node_paths=PackedStringArray("animation_sprite", "death_sound", "detect_player_area", "hurt_area", "collision") groups=["mob", "mob1"]]
 script = ExtResource("1_2xsrh")
 animation_sprite = NodePath("AnimatedSprite2D")
 death_sound = NodePath("DeathSound")
 detect_player_area = NodePath("DetectPlayer")
 hurt_area = NodePath("CanHurt")
+collision = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -12)
