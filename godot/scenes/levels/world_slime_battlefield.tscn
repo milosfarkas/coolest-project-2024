@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://be1t130xw8l4k"]
+[gd_scene load_steps=13 format=4 uid="uid://be1t130xw8l4k"]
 
 [ext_resource type="Script" path="res://scenes/levels/world_slime_battlefield.gd" id="1_d37b5"]
 [ext_resource type="PackedScene" uid="uid://dnj48leyo0unf" path="res://scenes/player.tscn" id="1_lg0ky"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cujl4bkec6wi8" path="res://mobs/mob1.tscn" id="3_lj7ii"]
 [ext_resource type="PackedScene" uid="uid://2n5qng46igiv" path="res://mobs/mob2.tscn" id="5_e7n7l"]
 [ext_resource type="AudioStream" uid="uid://nadq860am6p3" path="res://assets/music/urhajos-mister-kicsi2.ogg" id="5_ieikp"]
+[ext_resource type="PackedScene" uid="uid://b2agkccngd80n" path="res://mobs/mobTentacle.tscn" id="6_83u82"]
 [ext_resource type="PackedScene" uid="uid://d301c2ae00m1y" path="res://background.tscn" id="6_i5vvk"]
 [ext_resource type="PackedScene" uid="uid://dsay0k3hdghud" path="res://scenes/level_message.tscn" id="9_bjvj6"]
 [ext_resource type="PackedScene" uid="uid://bltl0nd6hp26l" path="res://scenes/exit.tscn" id="12_gv0sb"]
@@ -169,32 +170,35 @@ tile_set = SubResource("TileSet_mnmxp")
 [node name="Mobs" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="CharacterBody2D" parent="Mobs" instance=ExtResource("3_lj7ii")]
+[node name="Mob1_1" parent="Mobs" instance=ExtResource("3_lj7ii")]
 position = Vector2(254, 98)
 
-[node name="CharacterBody2D2" parent="Mobs" instance=ExtResource("3_lj7ii")]
+[node name="Mob1_2" parent="Mobs" instance=ExtResource("3_lj7ii")]
 position = Vector2(181, 14)
 
-[node name="CharacterBody2D3" parent="Mobs" instance=ExtResource("3_lj7ii")]
+[node name="Mob1_3" parent="Mobs" instance=ExtResource("3_lj7ii")]
 position = Vector2(425, -42)
 
-[node name="CharacterBody2D4" parent="Mobs" instance=ExtResource("3_lj7ii")]
+[node name="Mob1_4" parent="Mobs" instance=ExtResource("3_lj7ii")]
 position = Vector2(-102, 81)
 
-[node name="CharacterBody2D5" parent="Mobs" instance=ExtResource("3_lj7ii")]
+[node name="Mob1_5" parent="Mobs" instance=ExtResource("3_lj7ii")]
 position = Vector2(-197, 81)
 
-[node name="CharacterBody2D6" parent="Mobs" instance=ExtResource("3_lj7ii")]
+[node name="Mob1_6" parent="Mobs" instance=ExtResource("3_lj7ii")]
 position = Vector2(-136, -24)
 
-[node name="CharacterBody2D7" parent="Mobs" instance=ExtResource("3_lj7ii")]
+[node name="Mob1_7" parent="Mobs" instance=ExtResource("3_lj7ii")]
 position = Vector2(-73, -28)
 
-[node name="CharacterBody2D8" parent="Mobs" instance=ExtResource("3_lj7ii")]
+[node name="Mob1_8" parent="Mobs" instance=ExtResource("3_lj7ii")]
 position = Vector2(100, 96.015)
 
 [node name="Mob2" parent="Mobs" instance=ExtResource("5_e7n7l")]
 position = Vector2(385, 84)
+
+[node name="MobTentacle" parent="Mobs" instance=ExtResource("6_83u82")]
+position = Vector2(56, -27)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ieikp")

@@ -46,7 +46,7 @@ animation_sprite = NodePath("AnimatedSprite2D")
 death_sound = NodePath("DeathSound")
 detect_player_area = NodePath("DetectPlayer")
 hurt_area = NodePath("CanHurt")
-damage_points = 2
+damage_points = 5
 collision = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

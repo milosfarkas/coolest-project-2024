@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2agkccngd80n"]
+
+[ext_resource type="Script" path="res://mobs/mob_tentacle.gd" id="1_43tew"]
+[ext_resource type="Texture2D" uid="uid://bnro3e0ypncjp" path="res://assets/kenney_pixel-platformer/mrkicsi-csaposurleny_.png_0001.png" id="2_rb8gm"]
+[ext_resource type="Texture2D" uid="uid://0lk1tt1bkw6d" path="res://assets/kenney_pixel-platformer/mrkicsi-csaposurleny_.png_0003.png" id="3_ceep5"]
+[ext_resource type="Texture2D" uid="uid://cxvah38xw6jhf" path="res://assets/kenney_pixel-platformer/mrkicsi-csaposurleny_.png_0002.png" id="4_0ersj"]
+[ext_resource type="AudioStream" uid="uid://ctgmrgvxoibe2" path="res://assets/kenney_sci-fi-sounds/Audio/lowFrequency_explosion_001.ogg" id="4_t6rrg"]
+[ext_resource type="Texture2D" uid="uid://ch3drs6q3ch3o" path="res://assets/kenney_pixel-platformer/mrkicsi-csaposurleny_.png_0004.png" id="5_v42kd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2d4k"]
+radius = 11.0
+height = 24.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ajr5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rb8gm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ceep5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rb8gm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0ersj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ceep5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v42kd")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jth1a"]
+radius = 103.005
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u62yi"]
+radius = 14.0
+height = 28.0
+
+[node name="MobTentacle" type="CharacterBody2D" node_paths=PackedStringArray("animation_sprite", "death_sound", "detect_player_area", "hurt_area", "collision") groups=["mob", "mob1"]]
+script = ExtResource("1_43tew")
+animation_sprite = NodePath("AnimatedSprite2D")
+death_sound = NodePath("DeathSound")
+detect_player_area = NodePath("DetectPlayer")
+hurt_area = NodePath("CanHurt")
+damage_points = 4
+collision = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_i2d4k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -12)
+sprite_frames = SubResource("SpriteFrames_ajr5b")
+animation = &"run"
+frame_progress = 0.590553
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
+shape = SubResource("CircleShape2D_jth1a")
+
+[node name="CanHurt" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanHurt"]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_u62yi")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_t6rrg")

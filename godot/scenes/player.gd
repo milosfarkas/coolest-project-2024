@@ -3,7 +3,7 @@ class_name Urhajos_Mr_Kicsi
 
 signal health_changed(health)
 
-var current_health = 3
+var current_health = 10
 var damagable = true
 var attacking = false
 var dying = false

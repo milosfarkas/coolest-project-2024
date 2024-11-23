@@ -51,7 +51,7 @@ stretch_mode = 4
 custom_minimum_size = Vector2(36, 24)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_cqqnq")
-text = "3"
+text = "10"
 vertical_alignment = 1
 
 [node name="EnemyIcon" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/PanelContainer/HBoxContainer"]
