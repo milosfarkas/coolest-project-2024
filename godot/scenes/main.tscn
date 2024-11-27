@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cx60uft010hnt"]
+[gd_scene load_steps=9 format=3 uid="uid://cx60uft010hnt"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ab2pk"]
 [ext_resource type="PackedScene" uid="uid://bcfewnqbbc848" path="res://scenes/levels/demo_world_info.tscn" id="2_0prn6"]
@@ -6,11 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b3hr4ay02j0b4" path="res://scenes/ui.tscn" id="2_epvye"]
 [ext_resource type="PackedScene" uid="uid://be1t130xw8l4k" path="res://scenes/levels/world_slime_battlefield.tscn" id="3_yt3dl"]
 [ext_resource type="AudioStream" uid="uid://doc1kaitpj0vo" path="res://assets/kenney_sci-fi-sounds/Audio/computerNoise_000.ogg" id="4_jyvq8"]
+[ext_resource type="PackedScene" uid="uid://pyye4en1p8uu" path="res://scenes/levels/world_weeoom_or_die.tscn" id="5_a6mob"]
 [ext_resource type="PackedScene" uid="uid://chm6l3aoj62kl" path="res://mobile_control.tscn" id="5_l7quf"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("win_sound")]
 script = ExtResource("1_ab2pk")
-level_scenes = Array[PackedScene]([ExtResource("2_0prn6"), ExtResource("2_diajn"), ExtResource("3_yt3dl")])
+level_scenes = Array[PackedScene]([ExtResource("2_0prn6"), ExtResource("2_diajn"), ExtResource("3_yt3dl"), ExtResource("5_a6mob")])
 win_sound = NodePath("WinSound")
 
 [node name="UI" parent="." instance=ExtResource("2_epvye")]

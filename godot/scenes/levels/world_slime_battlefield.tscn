@@ -1,13 +1,14 @@
-[gd_scene load_steps=13 format=4 uid="uid://be1t130xw8l4k"]
+[gd_scene load_steps=14 format=4 uid="uid://be1t130xw8l4k"]
 
 [ext_resource type="Script" path="res://scenes/levels/world_slime_battlefield.gd" id="1_d37b5"]
 [ext_resource type="PackedScene" uid="uid://dnj48leyo0unf" path="res://scenes/player.tscn" id="1_lg0ky"]
 [ext_resource type="Texture2D" uid="uid://mmib0m82vaxh" path="res://assets/kenney_platformer-pack-industrial/Tilesheet/platformerPack_industrial_tilesheet.png" id="2_tqxcs"]
 [ext_resource type="PackedScene" uid="uid://cujl4bkec6wi8" path="res://mobs/mob1.tscn" id="3_lj7ii"]
 [ext_resource type="PackedScene" uid="uid://2n5qng46igiv" path="res://mobs/mob2.tscn" id="5_e7n7l"]
-[ext_resource type="AudioStream" uid="uid://nadq860am6p3" path="res://assets/music/urhajos-mister-kicsi2.ogg" id="5_ieikp"]
 [ext_resource type="PackedScene" uid="uid://b2agkccngd80n" path="res://mobs/mobTentacle.tscn" id="6_83u82"]
 [ext_resource type="PackedScene" uid="uid://d301c2ae00m1y" path="res://background.tscn" id="6_i5vvk"]
+[ext_resource type="PackedScene" uid="uid://fsdqwu6chwlq" path="res://mobs/mob_fast.tscn" id="7_8pdri"]
+[ext_resource type="AudioStream" uid="uid://f3kv3btvpjag" path="res://assets/music/urhajos-mister-kicsiv3-t3.ogg" id="8_ln7be"]
 [ext_resource type="PackedScene" uid="uid://dsay0k3hdghud" path="res://scenes/level_message.tscn" id="9_bjvj6"]
 [ext_resource type="PackedScene" uid="uid://bltl0nd6hp26l" path="res://scenes/exit.tscn" id="12_gv0sb"]
 
@@ -200,8 +201,11 @@ position = Vector2(385, 84)
 [node name="MobTentacle" parent="Mobs" instance=ExtResource("6_83u82")]
 position = Vector2(56, -27)
 
+[node name="MobFast" parent="Mobs" instance=ExtResource("7_8pdri")]
+position = Vector2(299, 24)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_ieikp")
+stream = ExtResource("8_ln7be")
 
 [node name="Background" parent="." instance=ExtResource("6_i5vvk")]
 
