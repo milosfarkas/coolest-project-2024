@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b2agkccngd80n" path="res://mobs/mobTentacle.tscn" id="6_83u82"]
 [ext_resource type="PackedScene" uid="uid://d301c2ae00m1y" path="res://background.tscn" id="6_i5vvk"]
 [ext_resource type="PackedScene" uid="uid://fsdqwu6chwlq" path="res://mobs/mob_fast.tscn" id="7_8pdri"]
-[ext_resource type="AudioStream" uid="uid://f3kv3btvpjag" path="res://assets/music/urhajos-mister-kicsiv3-t3.ogg" id="8_ln7be"]
+[ext_resource type="AudioStream" uid="uid://b0n6rjbmx8wv7" path="res://assets/music/urhajos-mister-kicsiv3-t1.ogg" id="8_0win0"]
 [ext_resource type="PackedScene" uid="uid://dsay0k3hdghud" path="res://scenes/level_message.tscn" id="9_bjvj6"]
 [ext_resource type="PackedScene" uid="uid://bltl0nd6hp26l" path="res://scenes/exit.tscn" id="12_gv0sb"]
 
@@ -205,7 +205,7 @@ position = Vector2(56, -27)
 position = Vector2(299, 24)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_ln7be")
+stream = ExtResource("8_0win0")
 
 [node name="Background" parent="." instance=ExtResource("6_i5vvk")]
 
