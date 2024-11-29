@@ -4,17 +4,15 @@
 > [Próbáld ki a játékot az itch.io-n!](https://milosfarkas.itch.io/urhajos-mr-kicsi)  
 > *Jelszó:* `coolest`
 
-![Cave 1](images/cave1.png)
-
+![img.png](images/img.png)
 ## Projekt leírása
 
 Az **Űrhajós Mr. Kicsi** egy űrlényekkel teli, izgalmas játék, ahol célod, hogy az idegen lényeket a börtöncellájukba teleportáld egy speciális lézerkatana segítségével. A pályákon végigmenve egyre nehezebb kihívásokkal nézel szembe.
 
-![Cool Game Image 2](images/cool2.jpg)  
-![Cool Game Image 1](images/cool1.jpg)
+![img_1.png](images/img_1.png)
 
 ## Mesélj nekünk a projektedről!
-
+![img_2.png](images/img_2.png)
 ### Miért ezt a projektet készítetted el?
 ???
 
@@ -78,18 +76,19 @@ Ha bármilyen javaslatod vagy ötleted van, kérlek, írd meg!
 > [Try the game on itch.io!](https://milosfarkas.itch.io/urhajos-mr-kicsi)  
 > *Password:* `coolest`
 
-![Cave 1](images/cave1.png)
+![img.png](images/img.png)
 
 ## Project Description
 
 **Mr. Astro Junior** is an exciting game filled with aliens, where your goal is to teleport them into prison cells using a special laser katana. As you progress through the levels, you’ll face increasingly challenging tasks.
 
-![Cool Game Image 2](images/cool2.jpg)  
-![Cool Game Image 1](images/cool1.jpg)
+![img_1.png](images/img_1.png)
 
 ## 🛸 Game Overview
 
 In this space-themed game, your task is to capture aliens and teleport them into designated cells. Start with a practice level to learn the basic mechanics before diving into the main missions.
+
+![img_2.png](images/img_2.png)
 
 ### 🎮 Platform
 
